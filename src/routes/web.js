@@ -3,8 +3,12 @@ const { getHomepage, getProduct, getLogin,
     getRegister, postRegister, postCheckLogin,
     getCheck, getAdmin, DeleProduct, postCreateProduct, getCreateProduct,
     getEditProduct, putEditProduct, getLogout, getManageUsers, deleteUser,
-    getEditUser, putEditUser
+    getEditUser, putEditUser, postContact, getContact, DeleContact
 } = require('../controllers/homeController');
+const { upload, saveImage } = require('../controllers/imageController');
+
+
+
 const router = express.Router();
 
 // router.Method('/route', handler)
@@ -26,6 +30,12 @@ router.get('/manage-users', getManageUsers);
 router.post('/delete-user/:id', deleteUser);
 router.get('/edit-user/:id', getEditUser)
 router.put('/edit-user/:id', putEditUser)
+router.post('/add-contact', postContact)
+router.get('/contact', getContact)
+router.post('/delete-contact/:id', DeleContact);
+router.post('/saveImage', upload.single('image'), saveImage);
+
+
 
 
 

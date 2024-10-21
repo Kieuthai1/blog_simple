@@ -30,12 +30,9 @@
             </div>
 
             <div class="header-right">
-
-              <a href="" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
+                <a href="" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
                 <a href="" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
                 <a href="" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
-
-
             </div>
         </nav>
         <!-- /. NAV TOP  -->
@@ -52,24 +49,17 @@
                                 <small>Last Login : 2 Weeks Ago </small>
                             </div>
                         </div>
-
                     </li>
-                 
                     <li>
-                        <a href="#"  class="active-menu-top"><i class="fa fa-desktop "></i>Quản lý <span class="fa arrow"></span></a>
+                        <a href="#" class="active-menu-top"><i class="fa fa-desktop"></i>Quản lý <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level collapse in">
                             <li>
                                 <a class="active-menu" href="panel-tabs.html"><i class="fa fa-toggle-on"></i>Product</a>
                             </li>
-                            
                         </ul>
                     </li>
-                 
-
                 </ul>
-
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
@@ -77,44 +67,39 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-head-line">Panels & Tabs</h1>
-                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
-
+                        <h1 class="page-subhead-line">This is dummy text, you can replace it with your original text.</h1>
                     </div>
                 </div>
                 <!-- /. ROW  -->
-                 
-                                 
-                            <div class="row">
-                                <a href="/admin">&larr; Back</a>
 
-
-
-                <div class="admin-title">
-                <h2>View / Edit Product</h2>
-                <h1 class="form-title">Thêm sản phẩm mới</h1>
-                <div class="form-container">
-                    <form action="/add-post" method="POST" class="product-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Tên sản phẩm:</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                <div class="row">
+                    <a href="/admin">&larr; Back</a>
+                    <div class="admin-title">
+                        <h2>View / Edit Product</h2>
+                        <h1 class="form-title">Thêm sản phẩm mới</h1>
+                        <div class="form-container">
+                            <!-- Thêm thuộc tính enctype="multipart/form-data" để hỗ trợ tải lên file -->
+                            <form action="/saveImage" method="POST" enctype="multipart/form-data" class="product-form">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Tên sản phẩm:</label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price" class="form-label">Giá:</label>
+                                    <input type="text" id="price" name="price" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image" class="form-label">Hình ảnh:</label>
+                                    <input type="file" id="image" name="image" class="form-control" required>
+                                </div>
+                                <input type="submit" class="btn btn-success"></input>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="price" class="form-label">Giá:</label>
-                            <input type="text" id="price" name="price" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="image" class="form-label">Hình ảnh:</label>
-                            <input type="file" id="image" name="image" class="form-control" required>
-                        </div>
-                        <input type="submit"  class="btn btn-success"></input>
-                    </form>
+                    </div>
                 </div>
-              
 
-             
+                <!-- /. PAGE INNER  -->
             </div>
-
-            <!-- /. PAGE INNER  -->
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
@@ -123,7 +108,7 @@
         &copy; 2014 YourCompany | Design By : <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
     </div>
     <!-- /. FOOTER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- SCRIPTS -AT THE BOTTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="/assets/js/jquery-1.10.2.js"></script>
     <!-- BOOTSTRAP SCRIPTS -->
@@ -132,7 +117,5 @@
     <script src="/assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="/assets/js/custom.js"></script>
-
-
 </body>
 </html>

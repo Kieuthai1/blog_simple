@@ -2,10 +2,13 @@ const connection = require('../config/database');
 
 const User = require("../models/user");
 const Product = require("../models/product");
+const Contact = require("../models/contact");
 const jwt = require('jsonwebtoken');
 const  bcrypt = require('bcryptjs');
-
+const multer = require('multer');
+const contact = require('../models/contact');
 const jwtSecret = process.env.JWT_SECERT
+const upload = multer({ dest: 'images/' })
 
 
 const getHomepage = async (req, res) => {
@@ -270,10 +273,49 @@ const putEditUser = async (req, res) => {
   }
 };
 
+const postContact = async (req, res) => {
+  try {
+    try {
+      const newContact  = new Contact({
+        fullname: req.body.fullname,
+        number: req.body.number,
+        email:  req.body.email,
+        message:  req.body.message
+      });
 
+      await newContact.save();
+      res.redirect('/');
+    } catch (error) {
+      console.log(error);
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+  const getContact = async (req, res) => {
+    try {
+      const contacts = await Contact.find();
+      res.render('contact.ejs', { contacts }); 
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Internal Server Error"); 
+    }
+  };
+
+  const DeleContact = async (req, res) => {
+
+    try {
+      await Contact.deleteOne( { _id: req.params.id } );
+      res.redirect('/contact');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 module.exports = {
     getHomepage, getProduct, getLogin, getRegister, postRegister,
     postCheckLogin,getCheck, getAdmin, DeleProduct, postCreateProduct,
     getCreateProduct, getEditProduct, putEditProduct, getLogout,
-    getManageUsers, deleteUser, getEditUser, putEditUser
+    getManageUsers, deleteUser, getEditUser, putEditUser, postContact,
+    getContact,DeleContact
 }

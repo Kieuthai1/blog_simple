@@ -412,23 +412,21 @@
                     Contact Us
                   </h2>
                 </div>
-                <form action="">
+                <form action="/add-contact" method="POST">
                   <div>
-                    <input type="text" placeholder="Full Name " />
+                    <input type="text" placeholder="Full Name "  name="fullname"/>
                   </div>
                   <div>
-                    <input type="text" placeholder="Phone number" />
+                    <input type="text" placeholder="Phone number" name="number"/>
                   </div>
                   <div>
-                    <input type="email" placeholder="Email" />
+                    <input type="email" placeholder="Email" name="email" />
                   </div>
                   <div>
-                    <input type="text" class="message-box" placeholder="Message" />
+                    <input type="text" class="message-box" placeholder="Message"  name="message"/>
                   </div>
                   <div class="d-flex ">
-                    <button>
-                      SEND NOW
-                    </button>
+                    <input type="submit"  class="btn btn-success"></input>
                   </div>
                 </form>
               </div>
