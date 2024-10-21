@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Users</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="/assets/css/font-awesome.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="/assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+       <!-- /. NAV TOP  -->
+       <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li>
+                    <div class="user-img-div">
+                        <img src="/assets/img/user.png" class="img-thumbnail" />
+
+                        <div class="inner-text">
+                            Tommy tèo
+                        <br />
+                            <small>Last Login : 2 Weeks Ago </small>
+                        </div>
+                    </div>
+
+                </li>
+             
+                <li>
+                    <a href="#"  class="active-menu-top"><i class="fa fa-desktop "></i>Quản lý <span class="fa arrow"></span></a>
+                     <ul class="nav nav-second-level collapse in">
+                        <li>
+                            <a  href="/admin"><i class="fa fa-toggle-on"></i>Product</a>
+                        </li>
+                        <li>
+                            <a class="active-menu" href="/manage-users"><i class="fa fa-toggle-on"></i>User</a>
+                        </li>
+                    </ul>
+                </li>
+             
+
+            </ul>
+
+        </div>
+
+    </nav>
+        <!-- /. NAV TOP  -->
+
+        
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">User Management</h1>
+                        <h1 class="page-subhead-line">Manage the list of users here.</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+                <div class="container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% users.forEach(user => { %>
+                                <tr>
+                                    <td><%= user.username %></td>
+                                    <td><%= user.gmail %></td>
+                                    <td>
+                                        <a href="/edit-user/<%= user._id %>" class="btn btn-warning mr-2">Edit</a>
+                                        <form action="/delete-user/<%= user._id %>" method="POST" style="display: inline-block;">
+                                            <input type="submit" value="Delete" class="btn btn-danger">
+                                        </form>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- /. PAGE INNER  -->
+            </div>
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <script src="/assets/js/jquery-1.10.2.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+</body>
+</html>

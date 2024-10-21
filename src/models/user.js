@@ -2,12 +2,16 @@ const mongoose = require('mongoose');
 
 //shape data
 const userSchema = new mongoose.Schema({
-    username: {
+       username: {
         type: String,
         required: true,
         unique: true
       },
       password: {
+        type: String,
+        required: true,
+      },
+      gmail: {
         type: String,
         required: true,
       }

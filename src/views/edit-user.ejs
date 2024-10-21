@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit User</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="/assets/css/basic.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Edit User</h2>
+        <form action="/edit-user/<%= user._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="<%= user.username %>" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="gmail">Email:</label>
+                <input type="email" id="gmail" name="gmail" value="<%= user.gmail %>" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Update User</button>
+        </form>
+    </div>
+</body>
+</html>
