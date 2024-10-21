@@ -58,10 +58,10 @@
                         <a href="#"  class="active-menu-top"><i class="fa fa-desktop "></i>Quản lý <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level collapse in">
                             <li>
-                                <a  href="/admin"><i class="fa fa-toggle-on"></i>Product</a>
+                                <a class="active-menu" href="/admin"><i class="fa fa-toggle-on"></i>Product</a>
                             </li>
                             <li>
-                                <a class="active-menu" href="/manage-users"><i class="fa fa-toggle-on"></i>User</a>
+                                <a  href="/manage-users"><i class="fa fa-toggle-on"></i>User</a>
                             </li>
                         </ul>
                     </li>
@@ -90,16 +90,16 @@
                     <% data.forEach(Product => { %>
                     <div class="row align-items-center mb-3 product-item">
                         
-                        <!-- Ảnh sản phẩm -->
+                        
                         <div class="col-md-2">
                             <img src="/images/<%= Product.image %>" alt="<%= Product.name %>" class="product-image img-thumbnail">
                         </div>
         
                         <!-- Tên sản phẩm -->
                         <div class="col-md-3">
-                            <a href="/Product/<%= Product._id %>" class="product-name">
-                                <%= Product.name %> &nearr;
-                            </a>
+                            
+                                <%= Product.name %> 
+                            
                         </div>
         
                         <!-- Giá sản phẩm -->

@@ -11,6 +11,7 @@
     <link href="/assets/css/basic.css" rel="stylesheet" />
 </head>
 <body>
+
     <div class="container mt-5">
         <h2>Edit User</h2>
         <form action="/edit-user/<%= user._id %>?_method=PUT" method="POST">
@@ -23,6 +24,7 @@
                 <input type="email" id="gmail" name="gmail" value="<%= user.gmail %>" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-success">Update User</button>
+            <a href="/admin">&larr; Back</a>
         </form>
     </div>
 </body>
